@@ -1,0 +1,241 @@
+* {
+  margin: 0rem;
+  font-family: "Poppins", sans-serif;
+  /* background: rgb(32, 32, 32); */
+}
+.circle {
+  position: absolute;
+  z-index: -100;
+  width: min(100vw, 150rem);
+  height: min(100vw, 150rem);
+  background-color: rgb(255, 211, 0);
+  border-radius: 150rem;
+  left: max(-50vw, -75rem);
+  top: max(-50vw, -75rem);
+}
+
+.form-label {
+  display: block;
+}
+.logo {
+  width: 2.5rem;
+}
+.body {
+  /* border: 2px solid red; */
+  flex-direction: row;
+  padding: 3rem !important;
+}
+.side-content {
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  row-gap: 1.5rem;
+  padding: 1rem;
+  justify-content: space-between;
+}
+.side-content-group {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+.side-content-description-heading {
+  font-weight: 400;
+  color: rgb(200, 200, 200);
+  font-size: 1rem;
+}
+.side-content-description {
+  color: rgb(164, 164, 164);
+  font-size: 0.8rem;
+}
+.nav {
+  padding: 1rem 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+}
+
+.main-heading {
+  padding: 0rem;
+  margin: 0rem;
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.75);
+  /* color: rgba(59, 130, 246, 0.5); */
+}
+.sub-heading {
+  color: grey;
+  font-weight: 600;
+}
+.body {
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.form {
+  padding: 2rem;
+  background-color: rgba(32, 32, 32);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 1rem;
+}
+.form-content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  justify-content: space-between;
+  width: max(30vw, 20rem);
+  padding: 1rem;
+  background-color: rgba(32, 32, 32);
+  /* box-shadow: 5px 5px 30px rgb(33, 34, 255); */
+}
+
+.form-box {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.2rem;
+}
+
+.form-primary-heading {
+  color: rgba(255, 255, 255);
+
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.form-secondary-heading {
+  color: rgb(200, 200, 200);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.form-tertiary-heading {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgb(164, 164, 164);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.3rem;
+}
+.form-label {
+  color: rgb(212, 212, 212);
+}
+
+.form-input,
+.form-input::after {
+  border: none;
+  display: flex;
+  background-color: rgb(55, 55, 55);
+  color: rgb(212, 212, 212);
+  border-bottom: 4px solid rgb(55, 55, 55);
+  border-radius: 0.1rem;
+  padding: 0.2rem 0.5rem;
+  transition: all 0.5s;
+  min-height: 1.5rem;
+}
+
+.form-input:focus {
+  border: none;
+  border-bottom: 4px solid rgb(255, 211, 0) !important;
+
+  outline: none;
+  transition: all 0.5s;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  column-gap: 1rem;
+}
+
+.form-reset {
+  color: black;
+  background: rgb(255, 211, 0);
+  border: none;
+  outline: none;
+  border-radius: 0.2rem;
+  padding: 0.3rem 1rem;
+  font-size: 1rem;
+}
+.form-reset:hover {
+  background: rgb(165, 142, 28);
+  cursor: pointer;
+}
+.form-submit {
+  color: white;
+  background: rgb(33, 34, 255);
+  border: none;
+  outline: none;
+  border-radius: 0.2rem;
+  padding: 0.3rem 1rem;
+  font-size: 1rem;
+}
+.form-submit:hover {
+  background: rgb(22, 22, 172);
+  cursor: pointer;
+}
+.side-content-image {
+  width: 20rem;
+  border: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: rgb(212, 212, 212);
+  -webkit-box-shadow: 0 0 0px 1000px rgb(55, 55, 55) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+.form-main-group {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 1rem;
+  row-gap: 2rem;
+}
+
+.form-main-group .form-group {
+  width: 46%;
+}
+
+.right {
+  font-size: 0.5rem !important;
+}
+
+@media only screen and (max-width: 1028px) {
+  .side-content {
+    width: 20rem;
+  }
+  .side-content-image {
+    width: 20rem;
+    border: none;
+  }
+
+  .form-content {
+    width: 20rem;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.footer-image {
+  width: 6rem;
+}

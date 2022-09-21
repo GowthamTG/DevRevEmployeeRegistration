@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./employeeRegistrationForm.css" />
+
+    <title>Welcome To DevRev</title>
+  </head>
+  <body>
+    <script
+      src="https://kit.fontawesome.com/6631b3c549.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./dist/employeeRegistrationForm.js"></script>
+    <div class="circle"></div>
+    <section class="nav">
+      <div class="nav-group">
+        <div class="nav-sub-group">
+          <h3 class="main-heading">DevRev</h3>
+          <h4 class="sub-heading">Developer CRM</h4>
+        </div>
+      </div>
+      <div class="nav-group">
+        <div class="nav-sub-group">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            class="logo"
+            viewBox="0 0 40 40"
+          >
+            <path
+              fill="#1A1A1A"
+              d="M19.38 30.3a9.67 9.67 0 0 0 9.67 9.7v-9.7h9.7a9.7 9.7 0 0 0-19.38 0Zm2.5-9.67H0L10.93 40l10.95-19.37ZM20.63 9.7a9.7 9.7 0 1 0-9.7 9.68V9.7h9.7ZM40 0H18.12l10.93 19.38L40 0Z"
+            ></path>
+          </svg>
+        </div>
+      </div>
+    </section>
+    <section class="body">
+      <section class="main">
+        <form action="" id="form" class="form">
+          <section class="side-content">
+            <!-- <div class="side-content-group">
+              <h3 class="form-primary-heading">Why and What is DevRev</h3>
+            </div> -->
+            <div class="side-content-group">
+              <div class="side-content-image-box">
+                <img
+                  class="side-content-image"
+                  src="https://devrev.ai/static/3bf91fc2b95e785332140581bc5fe0c1/14661/devrev_blog_cover_66dfb8d5f1_cab1b326df.webp"
+                  alt=""
+                  srcset=""
+                />
+                <!-- <iframe
+                  width="400"
+                  height="200"
+                  class="side-content-image"
+                  src="https://www.youtube.com/embed/0nlmoMeU4l8?autoplay=0&mute=1"
+                >
+                </iframe> -->
+              </div>
+              <div class="side-content-description-heading">
+                Concept of DevRev
+              </div>
+              <div class="side-content-description">
+                Two parts of hydrogen are product-centricity and
+                user-centricity, and social provides the oxygen to bind the
+                product, the user, and all work together. There is no ‘P’ in PLG
+                without the user, and that’s why we believe in PLuG.
+              </div>
+            </div>
+            <div class="side-content-group">
+              <div class="side-content-image-box">
+                <img
+                  class="side-content-image"
+                  src="https://devrev.ai/static/9e3023b107baed2ce8107db063006a36/14661/Product_Hunt_Blog_549851ee69.webp"
+                  alt=""
+                  srcset=""
+                />
+              </div>
+              <div class="side-content-description-heading">
+                Choosing a Startup as an Introvert
+              </div>
+              <div class="side-content-description">
+                Like any self-respecting middle-aged man, when I turned 40 a few
+                years ago, I took up long-distance running. For me, this
+                involved buying a lot of shoes and gadgets and one of them was
+                called Milestone Pod.
+              </div>
+            </div>
+            <div class="side-content-group">
+              <div class="side-content-image-box">
+                <img
+                  class="side-content-image"
+                  src="https://devrev.ai/static/bf13f6637bcac1edf69554a336d24c44/14661/Choosing_a_Startup_as_an_Introvert_8ff6cec45f.webp"
+                  alt=""
+                  srcset=""
+                />
+              </div>
+              <div class="side-content-description-heading">
+                Humans of DevRev
+              </div>
+              <div class="side-content-description">
+                I’ve had some miserable experiences where I've felt trapped,
+                uncomfortable, and unproductive because of my environment and
+                the working culture.
+              </div>
+            </div>
+          </section>
+          <section class="form-content">
+            <div class="form-box">
+              <h3 class="form-primary-heading">Hai! Gowtham Gopinath</h3>
+              <h4 class="form-secondary-heading">Welcome to DevRev</h4>
+              <h5 class="form-tertiary-heading">
+                Fill in the details to become a DevRevler...
+              </h5>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email</label
+              ><input
+                placeholder="Ex: test@gmail.com"
+                class="form-input"
+                id="email"
+                type="text"
+                for="email"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="userName">User Name</label
+              ><input
+                class="form-input"
+                id="userName"
+                type="text"
+                for="userName"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="phone">Phone No</label
+              ><input class="form-input" id="phone" type="text" for="phone" />
+            </div>
+            <div class="form-main-group">
+              <div class="form-group">
+                <label class="form-label" for="age">Age</label
+                ><input class="form-input" id="age" type="number" for="age" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="dob">Date of Birth</label
+                ><input class="form-input" id="dob" type="date" for="dob" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="age">Gender</label
+              ><select class="form-input" name="gender" id="gender">
+                <option value="male">Male</option>
+                <option value="male">Female</option>
+                <option value="not_specify">Prefer to no say</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="flatNo">House / Flat No</label>
+              <input name="flatNo" class="form-input" id="flatNo" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="streetName">Street Name</label>
+              <input name="streetName" class="form-input" id="streetName" />
+            </div>
+            <div class="form-main-group">
+              <div class="form-group">
+                <label class="form-label" for="city">City</label
+                ><input class="form-input" id="city" type="text" for="city" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="stateProvince"
+                  >State / Province</label
+                ><input
+                  class="form-input"
+                  id="stateProvince"
+                  type="text"
+                  for="stateProvince"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="age">Country</label
+              ><select class="form-input" name="gender" id="gender">
+                <option value="india">India</option>
+                <option value="usa">United States of America</option>
+                <option value="japan">Japan</option>
+              </select>
+            </div>
+
+            <div class="form-actions">
+              <button type="reset" class="form-reset">Reset</button>
+              <button type="submit" class="form-submit">
+                Submit <i class="fa-sm fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </section>
+        </form>
+      </section>
+    </section>
+    <section class="footer">
+      © All Rights Reserved
+      <div class="footer-image-box">
+        <img
+          class="footer-image"
+          src="./assets/DevRevLogoBig.png"
+          alt=""
+          srcset=""
+        />
+      </div>
+    </section>
+  </body>
+</html>
