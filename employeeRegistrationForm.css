@@ -79,6 +79,8 @@
   flex-direction: row;
   flex-wrap: wrap;
   column-gap: 1rem;
+  justify-content: center;
+  /* align-items: center; */
 }
 .form-content {
   display: flex;
