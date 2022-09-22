@@ -71,6 +71,10 @@ const phoneNumberValidation = (phoneNumberField) => {
 const ageValidation = (ageField) => {
     const age = +ageField.value;
     console.log(age);
+    if (age.toString().length < 0) {
+        errorShower("age", "Age is Required");
+        return false;
+    }
     if (age < 18) {
         errorShower("age", "Age must be greater than 18");
         return false;
