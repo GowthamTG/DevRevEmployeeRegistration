@@ -11,7 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./employeeRegistrationForm.css" />
-
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.png" />
     <title>Welcome To DevRev</title>
   </head>
   <body>
@@ -51,6 +51,33 @@
             <!-- <div class="side-content-group">
               <h3 class="form-primary-heading">Why and What is DevRev</h3>
             </div> -->
+            <div class="side-content-group">
+              <div class="side-content-image-box">
+                <!-- <img
+                  class="side-content-image"
+                  src="https://devrev.ai/static/3bf91fc2b95e785332140581bc5fe0c1/14661/devrev_blog_cover_66dfb8d5f1_cab1b326df.webp"
+                  alt=""
+                  srcset=""
+                /> -->
+                <iframe
+                  width="400"
+                  height="225"
+                  class="side-content-image"
+                  src="https://www.youtube.com/embed/0nlmoMeU4l8?autoplay=0&mute=1"
+                >
+                </iframe>
+              </div>
+              <div class="side-content-description-heading">
+                Learn about US!
+              </div>
+              <div class="side-content-description">
+                DevRev was founded by Dheeraj Pandey, former CEO of Nutanix and
+                Manoj Agarwal, former executive at Nutanix. Dheeraj founded
+                Nutanix and led the company to the biggest technology IPO in
+                2016. Last year, both Dheeraj and Manoj left the company to
+                found DevRev.
+              </div>
+            </div>
             <div class="side-content-group">
               <div class="side-content-image-box">
                 <img
@@ -132,6 +159,11 @@
                 type="text"
                 for="email"
               />
+              <label
+                for="email-error"
+                id="email-error"
+                class="form-error"
+              ></label>
             </div>
             <div class="form-group">
               <label class="form-label" for="userName">User Name</label
@@ -141,19 +173,51 @@
                 type="text"
                 for="userName"
               />
+              <label
+                for="userName-error"
+                id="userName-error"
+                class="form-error"
+              ></label>
             </div>
             <div class="form-group">
               <label class="form-label" for="phone">Phone No</label
-              ><input class="form-input" id="phone" type="text" for="phone" />
+              ><input
+                placeholder="Ex: +91-969-636-2222"
+                class="form-input"
+                id="phone"
+                type="text"
+                for="phone"
+              />
+              <label
+                for="phone-error"
+                id="phone-error"
+                class="form-error"
+              ></label>
             </div>
             <div class="form-main-group">
               <div class="form-group">
                 <label class="form-label" for="age">Age</label
-                ><input class="form-input" id="age" type="number" for="age" />
+                ><input
+                  class="form-input"
+                  placeholder="21"
+                  id="age"
+                  type="number"
+                  for="age"
+                />
+                <label
+                  for="age-error"
+                  id="age-error"
+                  class="form-error"
+                ></label>
               </div>
               <div class="form-group">
                 <label class="form-label" for="dob">Date of Birth</label
                 ><input class="form-input" id="dob" type="date" for="dob" />
+                <label
+                  for="dob-error"
+                  id="dob-error"
+                  class="form-error"
+                ></label>
               </div>
             </div>
             <div class="form-group">
@@ -163,19 +227,39 @@
                 <option value="male">Female</option>
                 <option value="not_specify">Prefer to no say</option>
               </select>
+              <label
+                for="gender-error"
+                id="gender-error"
+                class="form-error"
+              ></label>
             </div>
             <div class="form-group">
               <label class="form-label" for="flatNo">House / Flat No</label>
               <input name="flatNo" class="form-input" id="flatNo" />
+              <label
+                for="flatNo-error"
+                id="flatNo-error"
+                class="form-error"
+              ></label>
             </div>
             <div class="form-group">
               <label class="form-label" for="streetName">Street Name</label>
               <input name="streetName" class="form-input" id="streetName" />
+              <label
+                for="streetName-error"
+                id="streetName-error"
+                class="form-error"
+              ></label>
             </div>
             <div class="form-main-group">
               <div class="form-group">
                 <label class="form-label" for="city">City</label
                 ><input class="form-input" id="city" type="text" for="city" />
+                <label
+                  for="city-error"
+                  id="city-error"
+                  class="form-error"
+                ></label>
               </div>
               <div class="form-group">
                 <label class="form-label" for="stateProvince"
@@ -186,15 +270,42 @@
                   type="text"
                   for="stateProvince"
                 />
+                <label
+                  for="stateProvince-error"
+                  id="stateProvince-error"
+                  class="form-error"
+                ></label>
               </div>
             </div>
             <div class="form-group">
-              <label class="form-label" for="age">Country</label
-              ><select class="form-input" name="gender" id="gender">
+              <label class="form-label" for="country">Country</label
+              ><select class="form-input" name="country" id="country">
                 <option value="india">India</option>
                 <option value="usa">United States of America</option>
                 <option value="japan">Japan</option>
               </select>
+              <label
+                for="country-error"
+                id="country-error"
+                class="form-error"
+              ></label>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="disignation">Designation</label
+              ><select class="form-input" name="disignation" id="disignation">
+                <option value="UXEngineer">UX Engineer</option>
+                <option value="StategicOps">Strategic Ops</option>
+                <option value="FrontendEngineer">Front End Engineer</option>
+                <option value="BackendEngineer">Back End Engineer</option>
+                <option value="MemberofTechnicalStatf">
+                  Member of Technical Staff
+                </option>
+              </select>
+              <label
+                for="disignation-error"
+                id="disignation-error"
+                class="form-error"
+              ></label>
             </div>
 
             <div class="form-actions">

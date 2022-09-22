@@ -28,7 +28,7 @@
 .side-content {
   display: flex;
   flex-direction: column;
-  width: 20rem;
+  width: 25rem;
   row-gap: 1.5rem;
   padding: 1rem;
   justify-content: space-between;
@@ -85,7 +85,7 @@
   flex-direction: column;
   row-gap: 2rem;
   justify-content: space-between;
-  width: max(30vw, 20rem);
+  width: max(30vw, 25rem);
   padding: 1rem;
   background-color: rgba(32, 32, 32);
   /* box-shadow: 5px 5px 30px rgb(33, 34, 255); */
@@ -179,7 +179,7 @@
   cursor: pointer;
 }
 .side-content-image {
-  width: 20rem;
+  width: 25rem;
   border: none;
 }
 
@@ -225,6 +225,9 @@ select:-webkit-autofill:focus {
   .form-content {
     width: 20rem;
   }
+  .form-main-group .form-group {
+    width: 25rem;
+  }
 }
 
 .footer {
@@ -238,4 +241,11 @@ select:-webkit-autofill:focus {
 }
 .footer-image {
   width: 6rem;
+}
+
+.form-error {
+  color: red;
+  font-size: 0.8rem;
+  padding: 0.2rem;
+  min-height: 1.2rem;
 }
