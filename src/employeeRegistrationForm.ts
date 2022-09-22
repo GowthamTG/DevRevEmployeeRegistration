@@ -186,6 +186,10 @@ window.addEventListener("load", (): void => {
       "stateProvince"
     ) as HTMLInputElement;
 
+    const designationField = document.getElementById(
+      "designation"
+    ) as HTMLInputElement;
+
     const employeeData = {
       emailField: emailField.value,
       userNameField: userNameField.value,
@@ -197,6 +201,7 @@ window.addEventListener("load", (): void => {
       streetNameField: streetNameField.value,
       cityField: cityField.value,
       stateProvinceField: stateProvinceField.value,
+      designationField: designationField.value,
     };
 
     if (
