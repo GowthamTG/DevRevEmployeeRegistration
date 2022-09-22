@@ -85,7 +85,7 @@ const ageValidation = (ageField: HTMLInputElement): boolean => {
   const age = +ageField.value;
   console.log(age);
 
-  if (age.toString().length < 0) {
+  if (age === 0) {
     errorShower("age", "Age is Required");
     return false;
   }
