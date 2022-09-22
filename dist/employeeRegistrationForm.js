@@ -56,25 +56,23 @@ const userNameValidation = (userNameField) => {
 };
 const phoneNumberValidation = (phoneNumberField) => {
     const phoneNumber = phoneNumberField.value;
+    console.log(phoneNumber);
     if (phoneNumber.length === 0) {
         errorShower("phone", "Phone Number is Required");
         return false;
     }
-    if (/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im.test(phoneNumber.toString())) {
+    if (/^[\+]?[(]?[6-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test(phoneNumber) === false) {
         errorShower("phone", "Phone Number must be in a valid form");
-        return true;
+        return false;
     }
     removeError("phone", "");
     return true;
 };
 const ageValidation = (ageField) => {
-    const age = ageField.value;
-    if (age.length < 18) {
+    const age = +ageField.value;
+    console.log(age);
+    if (age < 18) {
         errorShower("age", "Age must be greater than 18");
-        return false;
-    }
-    if (hasNumber(age)) {
-        errorShower("age", "Must not contain number");
         return false;
     }
     removeError("age", "");
@@ -129,6 +127,7 @@ window.addEventListener("load", () => {
         const streetNameField = document.getElementById("streetName");
         const cityField = document.getElementById("city");
         const stateProvinceField = document.getElementById("stateProvince");
+        const designationField = document.getElementById("designation");
         const employeeData = {
             emailField: emailField.value,
             userNameField: userNameField.value,
@@ -140,6 +139,7 @@ window.addEventListener("load", () => {
             streetNameField: streetNameField.value,
             cityField: cityField.value,
             stateProvinceField: stateProvinceField.value,
+            designationField: designationField.value,
         };
         if (emailValidation(emailField) &&
             userNameValidation(userNameField) &&

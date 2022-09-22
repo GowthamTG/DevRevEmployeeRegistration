@@ -62,32 +62,37 @@ const userNameValidation = (userNameField: HTMLInputElement): boolean => {
 
 const phoneNumberValidation = (phoneNumberField: HTMLInputElement) => {
   const phoneNumber = phoneNumberField.value;
+  // var re = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+  console.log(phoneNumber);
+
   if (phoneNumber.length === 0) {
     errorShower("phone", "Phone Number is Required");
     return false;
   }
 
   if (
-    /^[\+]?[(]?[6-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im.test(
-      phoneNumber.toString()
-    )
+    /^[\+]?[(]?[6-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test(
+      phoneNumber
+    ) === false
   ) {
     errorShower("phone", "Phone Number must be in a valid form");
-    return true;
+    return false;
   }
   removeError("phone", "");
   return true;
 };
 const ageValidation = (ageField: HTMLInputElement): boolean => {
-  const age = ageField.value;
-  if (age.length < 18) {
+  const age = +ageField.value;
+  console.log(age);
+
+  if (age < 18) {
     errorShower("age", "Age must be greater than 18");
     return false;
   }
-  if (hasNumber(age)) {
-    errorShower("age", "Must not contain number");
-    return false;
-  }
+  // if (hasNumber(age)) {
+  //   errorShower("age", "Must not contain number");
+  //   return false;
+  // }
   removeError("age", "");
   return true;
 };
