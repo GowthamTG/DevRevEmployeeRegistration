@@ -88,7 +88,7 @@ const flatNoValidation = (flatNoField) => {
         errorShower("flatNo", "Flat No is Required");
         return false;
     }
-    if (flatNo.length < 10) {
+    if (flatNo.length > 10) {
         errorShower("flatNo", "Flat No must have less than 10 digits");
         return false;
     }
