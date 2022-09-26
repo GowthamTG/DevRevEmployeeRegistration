@@ -297,7 +297,7 @@ window.addEventListener("load", (): void => {
       const formSubHeading = document.getElementById("form-secondary-heading");
       formSubHeading!.innerText = "Thank You For Submitting";
       const formTerHeading = document.getElementById("form-tertiary-heading");
-      formSubHeading!.innerText = "Mean while we get back look at what we do";
+      formTerHeading!.innerText = "Mean while we get back look at what we do";
     }
   });
 });
