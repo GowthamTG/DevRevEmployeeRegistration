@@ -220,10 +220,12 @@ window.addEventListener("load", () => {
             }
             const formResults = document.getElementById("form-results");
             formResults.style.display = "flex";
+            const formPrimaryHeading = document.getElementById("form-primary-heading");
+            formPrimaryHeading.innerText = "Thank You For Submitting";
             const formSubHeading = document.getElementById("form-secondary-heading");
-            formSubHeading.innerText = "Thank You For Submitting";
+            formSubHeading.innerText = "We will get back to you shortly";
             const formTerHeading = document.getElementById("form-tertiary-heading");
-            formSubHeading.innerText = "Mean while we get back look at what we do";
+            formTerHeading.innerText = "Mean while we get back look at what we do";
         }
     });
 });
