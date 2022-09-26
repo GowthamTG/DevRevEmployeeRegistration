@@ -294,8 +294,12 @@ window.addEventListener("load", (): void => {
         "form-results"
       ) as HTMLInputElement;
       formResults.style.display = "flex";
+      const formPrimaryHeading = document.getElementById(
+        "form-primary-heading"
+      );
+      formPrimaryHeading!.innerText = "Thank You For Submitting";
       const formSubHeading = document.getElementById("form-secondary-heading");
-      formSubHeading!.innerText = "Thank You For Submitting";
+      formSubHeading!.innerText = "We will get back to you shortly";
       const formTerHeading = document.getElementById("form-tertiary-heading");
       formTerHeading!.innerText = "Mean while we get back look at what we do";
     }
