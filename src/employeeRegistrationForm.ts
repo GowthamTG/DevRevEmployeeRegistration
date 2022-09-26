@@ -1,20 +1,31 @@
+// const formResults = document.getElementById("form-results") as HTMLInputElement;
+
+// formResults.style.display = "none";
+
 const errorShower = (id: string, reason: string) => {
+  console.log(id);
+
   const errorInputBox = document.getElementById(id) as HTMLInputElement;
   errorInputBox.style.borderBottomColor = "red";
   setTimeout(() => {
     errorInputBox.style.borderBottomColor = "rgb(55, 55, 55)";
   }, 5000);
   const errorTextBox = document.getElementById(id + "-error");
+  console.log(errorTextBox);
   errorTextBox!.innerText = reason;
 };
 
 const removeError = (id: string, reason: string) => {
+  console.log(id);
+
   const errorInputBox = document.getElementById(id) as HTMLInputElement;
   errorInputBox.style.borderBottomColor = "green";
   setTimeout(() => {
     errorInputBox.style.borderBottomColor = "rgb(55, 55, 55)";
   }, 5000);
   const errorTextBox = document.getElementById(id + "-error");
+  console.log(errorTextBox);
+
   errorTextBox!.innerText = "";
 };
 
@@ -114,6 +125,37 @@ const flatNoValidation = (flatNoField: HTMLInputElement) => {
   return true;
 };
 
+const streetNameValidation = (streetNameField: HTMLInputElement) => {
+  const streetName = streetNameField.value;
+  if (streetName.trim() === "") {
+    errorShower("streetName", "Street Name is Required");
+    return false;
+  }
+
+  removeError("streetName", "");
+  return true;
+};
+const cityValidation = (cityField: HTMLInputElement) => {
+  const city = cityField.value;
+  if (city.trim() === "") {
+    errorShower("city", "City is Required");
+    return false;
+  }
+
+  removeError("city", "");
+  return true;
+};
+const stateProvinceValidation = (stateProvinceField: HTMLInputElement) => {
+  const stateProvince = stateProvinceField.value;
+  if (stateProvince.trim() === "") {
+    errorShower("stateProvince", "State / Province is Required");
+    return false;
+  }
+
+  removeError("stateProvince", "");
+  return true;
+};
+
 type Employee = {
   email: string;
   userName: string;
@@ -128,6 +170,11 @@ type Employee = {
 };
 
 window.addEventListener("load", (): void => {
+  const formResults = document.getElementById(
+    "form-results"
+  ) as HTMLInputElement;
+
+  formResults.style.display = "none";
   const form = document.getElementById("form");
   const emailField = document.getElementById("email") as HTMLInputElement;
   const userNameField = document.getElementById("userName") as HTMLInputElement;
@@ -139,6 +186,7 @@ window.addEventListener("load", (): void => {
   const streetNameField = document.getElementById(
     "streetName"
   ) as HTMLInputElement;
+
   const cityField = document.getElementById("city") as HTMLInputElement;
   const stateProvinceField = document.getElementById(
     "stateProvince"
@@ -159,21 +207,18 @@ window.addEventListener("load", (): void => {
     ageValidation(ageField);
   });
 
-  // dobField.addEventListener("blur", (event): void => {
-  //   const dob = dobField.value;
-  //   if (dob.length < 18) {
-  //     errorShower("dob", "BOB must be greater than 18");
-  //     return;
-  //   }
-  //   if (hasNumber(dob)) {
-  //     errorShower("dob", "Must not contain number");
-  //     return;
-  //   }
-  //   removeError("dob", "");
-  // });
-
   flatNoField.addEventListener("blur", (event): void => {
     flatNoValidation(flatNoField);
+  });
+
+  streetNameField.addEventListener("blur", (event): void => {
+    streetNameValidation(streetNameField);
+  });
+  cityField.addEventListener("blur", (event): void => {
+    cityValidation(cityField);
+  });
+  stateProvinceField.addEventListener("blur", (event): void => {
+    stateProvinceValidation(stateProvinceField);
   });
 
   form!.addEventListener("submit", (event): void => {
@@ -197,39 +242,62 @@ window.addEventListener("load", (): void => {
     const stateProvinceField = document.getElementById(
       "stateProvince"
     ) as HTMLInputElement;
+    const countryField = document.getElementById("country") as HTMLInputElement;
 
     const designationField = document.getElementById(
       "designation"
     ) as HTMLInputElement;
 
     const employeeData = {
-      emailField: emailField.value,
-      userNameField: userNameField.value,
-      phoneNumberField: phoneNumberField.value,
-      ageField: ageField.value,
-      dobField: dobField.value,
-      genderField: genderField.value,
-      flatNoField: flatNoField.value,
-      streetNameField: streetNameField.value,
-      cityField: cityField.value,
-      stateProvinceField: stateProvinceField.value,
-      designationField: designationField.value,
+      email: emailField.value,
+      userName: userNameField.value,
+      phone: phoneNumberField.value,
+      age: ageField.value,
+      dob: dobField.value,
+      gender: genderField.value,
+      flatNo: flatNoField.value,
+      streetName: streetNameField.value,
+      city: cityField.value,
+      stateProvince: stateProvinceField.value,
+      country: countryField.value,
+      designation: designationField.value,
     };
-
+    emailValidation(emailField);
+    userNameValidation(userNameField);
+    ageValidation(ageField);
+    phoneNumberValidation(phoneNumberField);
+    flatNoValidation(flatNoField);
+    streetNameValidation(streetNameField);
+    cityValidation(cityField);
+    stateProvinceValidation(stateProvinceField);
     if (
       emailValidation(emailField) &&
       userNameValidation(userNameField) &&
       ageValidation(ageField) &&
       phoneNumberValidation(phoneNumberField) &&
-      flatNoValidation(flatNoField)
+      flatNoValidation(flatNoField) &&
+      streetNameValidation(streetNameField) &&
+      cityValidation(cityField) &&
+      stateProvinceValidation(stateProvinceField)
     ) {
-      alert("Data Sumitted Successfully :  " + JSON.stringify(employeeData));
+      Object.entries(employeeData).forEach(([id, value]) => {
+        const field = document.getElementById("form-results-" + id);
+        console.log("form-results-" + id);
+
+        field!.innerHTML = value;
+      });
+      var formGroups = document.querySelectorAll(".form-group");
+      for (var i = 0; i < formGroups.length; i++) {
+        formGroups[i].setAttribute("style", "display : none;");
+      }
+      const formResults = document.getElementById(
+        "form-results"
+      ) as HTMLInputElement;
+      formResults.style.display = "flex";
+      const formSubHeading = document.getElementById("form-secondary-heading");
+      formSubHeading!.innerText = "Thank You For Submitting";
+      const formTerHeading = document.getElementById("form-tertiary-heading");
+      formSubHeading!.innerText = "Mean while we get back look at what we do";
     }
-    // console.log(event);
-
-    // console.log("VALIDATING");
-    // console.log(phoneNumber);
-
-    // alert("Data Sumitted Successfully :  " + JSON.stringify(employeeData));
   });
 });

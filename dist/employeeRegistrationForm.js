@@ -1,20 +1,24 @@
 "use strict";
 const errorShower = (id, reason) => {
+    console.log(id);
     const errorInputBox = document.getElementById(id);
     errorInputBox.style.borderBottomColor = "red";
     setTimeout(() => {
         errorInputBox.style.borderBottomColor = "rgb(55, 55, 55)";
     }, 5000);
     const errorTextBox = document.getElementById(id + "-error");
+    console.log(errorTextBox);
     errorTextBox.innerText = reason;
 };
 const removeError = (id, reason) => {
+    console.log(id);
     const errorInputBox = document.getElementById(id);
     errorInputBox.style.borderBottomColor = "green";
     setTimeout(() => {
         errorInputBox.style.borderBottomColor = "rgb(55, 55, 55)";
     }, 5000);
     const errorTextBox = document.getElementById(id + "-error");
+    console.log(errorTextBox);
     errorTextBox.innerText = "";
 };
 const validateEmail = (email) => {
@@ -95,7 +99,36 @@ const flatNoValidation = (flatNoField) => {
     removeError("flatNo", "");
     return true;
 };
+const streetNameValidation = (streetNameField) => {
+    const streetName = streetNameField.value;
+    if (streetName.trim() === "") {
+        errorShower("streetName", "Street Name is Required");
+        return false;
+    }
+    removeError("streetName", "");
+    return true;
+};
+const cityValidation = (cityField) => {
+    const city = cityField.value;
+    if (city.trim() === "") {
+        errorShower("city", "City is Required");
+        return false;
+    }
+    removeError("city", "");
+    return true;
+};
+const stateProvinceValidation = (stateProvinceField) => {
+    const stateProvince = stateProvinceField.value;
+    if (stateProvince.trim() === "") {
+        errorShower("stateProvince", "State / Province is Required");
+        return false;
+    }
+    removeError("stateProvince", "");
+    return true;
+};
 window.addEventListener("load", () => {
+    const formResults = document.getElementById("form-results");
+    formResults.style.display = "none";
     const form = document.getElementById("form");
     const emailField = document.getElementById("email");
     const userNameField = document.getElementById("userName");
@@ -122,6 +155,15 @@ window.addEventListener("load", () => {
     flatNoField.addEventListener("blur", (event) => {
         flatNoValidation(flatNoField);
     });
+    streetNameField.addEventListener("blur", (event) => {
+        streetNameValidation(streetNameField);
+    });
+    cityField.addEventListener("blur", (event) => {
+        cityValidation(cityField);
+    });
+    stateProvinceField.addEventListener("blur", (event) => {
+        stateProvinceValidation(stateProvinceField);
+    });
     form.addEventListener("submit", (event) => {
         event.preventDefault();
         const form = document.getElementById("form");
@@ -135,26 +177,53 @@ window.addEventListener("load", () => {
         const streetNameField = document.getElementById("streetName");
         const cityField = document.getElementById("city");
         const stateProvinceField = document.getElementById("stateProvince");
+        const countryField = document.getElementById("country");
         const designationField = document.getElementById("designation");
         const employeeData = {
-            emailField: emailField.value,
-            userNameField: userNameField.value,
-            phoneNumberField: phoneNumberField.value,
-            ageField: ageField.value,
-            dobField: dobField.value,
-            genderField: genderField.value,
-            flatNoField: flatNoField.value,
-            streetNameField: streetNameField.value,
-            cityField: cityField.value,
-            stateProvinceField: stateProvinceField.value,
-            designationField: designationField.value,
+            email: emailField.value,
+            userName: userNameField.value,
+            phone: phoneNumberField.value,
+            age: ageField.value,
+            dob: dobField.value,
+            gender: genderField.value,
+            flatNo: flatNoField.value,
+            streetName: streetNameField.value,
+            city: cityField.value,
+            stateProvince: stateProvinceField.value,
+            country: countryField.value,
+            designation: designationField.value,
         };
+        emailValidation(emailField);
+        userNameValidation(userNameField);
+        ageValidation(ageField);
+        phoneNumberValidation(phoneNumberField);
+        flatNoValidation(flatNoField);
+        streetNameValidation(streetNameField);
+        cityValidation(cityField);
+        stateProvinceValidation(stateProvinceField);
         if (emailValidation(emailField) &&
             userNameValidation(userNameField) &&
             ageValidation(ageField) &&
             phoneNumberValidation(phoneNumberField) &&
-            flatNoValidation(flatNoField)) {
-            alert("Data Sumitted Successfully :  " + JSON.stringify(employeeData));
+            flatNoValidation(flatNoField) &&
+            streetNameValidation(streetNameField) &&
+            cityValidation(cityField) &&
+            stateProvinceValidation(stateProvinceField)) {
+            Object.entries(employeeData).forEach(([id, value]) => {
+                const field = document.getElementById("form-results-" + id);
+                console.log("form-results-" + id);
+                field.innerHTML = value;
+            });
+            var formGroups = document.querySelectorAll(".form-group");
+            for (var i = 0; i < formGroups.length; i++) {
+                formGroups[i].setAttribute("style", "display : none;");
+            }
+            const formResults = document.getElementById("form-results");
+            formResults.style.display = "flex";
+            const formSubHeading = document.getElementById("form-secondary-heading");
+            formSubHeading.innerText = "Thank You For Submitting";
+            const formTerHeading = document.getElementById("form-tertiary-heading");
+            formSubHeading.innerText = "Mean while we get back look at what we do";
         }
     });
 });

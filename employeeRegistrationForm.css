@@ -251,3 +251,42 @@ select:-webkit-autofill:focus {
   padding: 0.2rem;
   min-height: 1.2rem;
 }
+.form-results-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* b; */
+}
+.form-inputs-section {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.8rem;
+}
+
+.form-results {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  row-gap: 1.5rem;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+.form-results-label {
+  width: 10rem;
+  font-weight: 500;
+  /* border: 2px solid red; */
+}
+
+.form-results-group {
+  display: flex;
+  flex-flow: row wrap;
+  /* justify-content: flex-start; */
+  /* border: 2px solid red; */
+  /* column-gap: 1rem; */
+}
+.form-results-ans {
+  color: rgb(200, 200, 200);
+  font-weight: 400;
+  /* word-wrap: */
+}
